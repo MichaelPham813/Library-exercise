@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+<body>
+    <h1>
+        Hello, welcome to the digital library
+    </h1>
+    <dialog id = "dialogContainer">
+        <form action="#">
+            <div class = "container">
+                <div class = "items">
+                    <h4>Book name</h4>
+                    <input type="text" name="Book name" id="name-box" placeholder="Book name" value="" required>
+                </div>
+                <div class = "items">
+                    <h4>Author</h4>
+                    <input type="text" name ="Author name" id="author-box" placeholder="Author name" value="" required>
+                </div>
+                <div class = "items">
+                    <h4>Pages</h4>
+                    <input type="number" name="Pages" id="pages-box" placeholder="Pages" min = "1" value="" required>
+                </div>
+                <div class = "items">
+                    <h4>Read Status</h4>
+                    <input type="radio" checked name ="Read Status" id = "status-box" class = "read" placeholder="Read Status" value="Read">
+                    <label for="status-box read">Read</label>
+                    <input type="radio" name ="Read Status" id = "status-box" class = "unread" placeholder="Read Status" value="Not Read">
+                    <label for="status-box unread">Not Read</label>
+                </div>
+                <input id = "buttons" type="submit" value="Add to library" onclick = 'addBookToLibrary(event)'>
+                <button id = "closeDialog">
+                    Close form
+                </button>
+            </div>
+        </form>
+    </dialog>
+    <p class = "btnDiv">
+        <button id = "showDialog">
+            Add new books
+        </button>
+    </p>
+    <br>
+    <div class="containers display-container" id="display">
+
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
