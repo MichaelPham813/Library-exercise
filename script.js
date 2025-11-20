@@ -73,7 +73,7 @@ function addBookToLibrary(ev){
     {
         if(statusBox[i].checked)
         {
-            statusValue = statusBox[i].value;
+            statusValue = (statusBox[i].value === 'Read');
         }
     }
 
@@ -129,6 +129,7 @@ function booksDisplay()
         displayLibrary.innerHTML += template;
     }
     deleteBook()
+    adjustReadStatus();
 }
 
 
