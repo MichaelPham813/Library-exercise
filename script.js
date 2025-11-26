@@ -101,7 +101,7 @@ function addBookToLibrary(ev){
 function booksDisplay()
 {
     const displayLibrary = document.getElementById("display")
-    displayLibrary.innerHTML = '';
+    displayLibrary.innerHTML = "";
     for(let i = 0 ; i < myLibrary.length; i++)
     {
         const book = myLibrary[i];
@@ -124,9 +124,8 @@ function booksDisplay()
                     </button>
                 </div>            
             </div>            
-            <hr/>
         `;
-        displayLibrary.innerHTML += template;
+        displayLibrary.insertAdjacentHTML('beforeend',template);
     }
     deleteBook()
     adjustReadStatus();
@@ -159,4 +158,15 @@ function adjustReadStatus()
             booksDisplay();
         });
     } 
+}
+
+function closeForm()
+{
+    let nameBox = document.getElementById('name-box');
+    let authorBox = document.getElementById('author-box');
+    let pagesBox = document.getElementById('pages-box');
+
+    nameBox.value = "";
+    authorBox.value = "";
+    pagesBox.value = "";
 }

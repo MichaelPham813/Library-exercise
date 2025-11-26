@@ -1,5 +1,10 @@
+
+
+
 body
 {
+    margin: 0;
+    padding: 0;
     height:100%;
     width:100%;
 }
@@ -7,6 +12,8 @@ body
 h1
 {
     text-align: center;
+    margin:0px;
+    padding: 10px 0px 0px 0px;
 }
 
 button, #buttons
@@ -18,15 +25,26 @@ button, #buttons
 {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
     gap:15px;
+    
 }
 
 .containers
 {
     margin-top:40px;
+}
+
+.topContainer
+{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    box-shadow: 0px -10px 2dvw .2px;
+}
+
+#topBtn
+{
+    padding-bottom: 20px;
 }
 
 .libraryContainer
@@ -55,3 +73,16 @@ button, #buttons
     text-align: center;
 }
 
+.display-container
+{
+    display: flex;
+    flex-direction: row;
+    margin:10px;
+    padding:10px;
+    gap: 10rem;
+    flex-wrap:wrap;
+    justify-content: center;
+    justify-items: center;
+    align-content: space-between;
+    align-items: center;
+}

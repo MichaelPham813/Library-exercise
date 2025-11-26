@@ -7,9 +7,16 @@
     <title>Library</title>
 </head>
 <body>
-    <h1>
-        Hello, welcome to the digital library
-    </h1>
+    <div class="topContainer">
+        <h1>
+            Hello, welcome to the digital library
+        </h1>
+        <p class = "btnDiv" id = "topBtn">
+            <button id = "showDialog" onclick = "closeForm()">
+                Add new books
+            </button>
+        </p>
+    </div>
     <dialog id = "dialogContainer">
         <form action="#">
             <div class = "container">
@@ -39,13 +46,61 @@
             </div>
         </form>
     </dialog>
-    <p class = "btnDiv">
-        <button id = "showDialog">
-            Add new books
-        </button>
-    </p>
     <br>
     <div class="containers display-container" id="display">
+        <div class = "libraryContainer">
+            <div class="book">
+                <p id = "books-id"><strong>ID:</strong> 0001</p>
+                <p id = "books-title"><strong>Title:</strong> Harry Potter</p>
+                <p id = "books-author"><strong>Author:</strong> J.K Rowling</p>
+                <p id = "books-pages"><strong>Title:</strong> 365</p>
+                <p id = "books-status"><strong>Status:</strong> Read</p>               
+            </div>
+            <div class = "btnDiv">
+                <button class = "removeBook" onclick="deleteBook()">
+                    Remove
+                </button>
+                <button class = "statusBtn" data-index = "${i}"  onclick = "adjustReadStatus()">
+                    Change read status
+                </button>
+            </div>            
+        </div>            
+
+        <div class = "libraryContainer">
+            <div class="book">
+                <p id = "books-id"><strong>ID:</strong> 0002</p>
+                <p id = "books-title"><strong>Title:</strong> Hellraiser</p>
+                <p id = "books-author"><strong>Author:</strong> Clive Barker</p>
+                <p id = "books-pages"><strong>Title:</strong> 500</p>
+                <p id = "books-status"><strong>Status:</strong> Not Read</p>               
+            </div>
+            <div class = "btnDiv">
+                <button class = "removeBook" onclick="deleteBook()">
+                    Remove
+                </button>
+                <button class = "statusBtn" data-index = "${i}"  onclick = "adjustReadStatus()">
+                    Change read status
+                </button>
+            </div>            
+        </div>            
+
+        <div class = "libraryContainer">
+            <div class="book">
+                <p id = "books-id"><strong>ID:</strong> 0002</p>
+                <p id = "books-title"><strong>Title:</strong> Hellraiser</p>
+                <p id = "books-author"><strong>Author:</strong> Clive Barker</p>
+                <p id = "books-pages"><strong>Title:</strong> 500</p>
+                <p id = "books-status"><strong>Status:</strong> Not Read</p>               
+            </div>
+            <div class = "btnDiv">
+                <button class = "removeBook" onclick="deleteBook()">
+                    Remove
+                </button>
+                <button class = "statusBtn" data-index = "${i}"  onclick = "adjustReadStatus()">
+                    Change read status
+                </button>
+            </div>            
+        </div>            
 
     </div>
 </body>
