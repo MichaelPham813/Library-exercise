@@ -100,8 +100,18 @@ function addBookToLibrary(ev){
 //Display the books for people to see
 function booksDisplay()
 {
-    const displayLibrary = document.getElementById("display")
-    displayLibrary.innerHTML = "";
+    const displayLibrary = document.getElementById("display");
+
+    
+    [...displayLibrary.children].forEach(child => 
+    {
+        if(!child.classList.contains('dummy'))
+            {
+                child.remove();
+            }
+    });
+
+
     for(let i = 0 ; i < myLibrary.length; i++)
     {
         const book = myLibrary[i];
@@ -112,7 +122,7 @@ function booksDisplay()
                     <p id = "books-id"><strong>ID:</strong> ${book.id}</p>
                     <p id = "books-title"><strong>Title:</strong> ${book.name}</p>
                     <p id = "books-author"><strong>Author:</strong> ${book.author}</p>
-                    <p id = "books-pages"><strong>Title:</strong> ${book.pages}</p>
+                    <p id = "books-pages"><strong>Pages:</strong> ${book.pages}</p>
                     <p id = "books-status"><strong>Status:</strong> ${book.status ? "Read" : "Not Read"}</p>               
                 </div>
                 <div class = "btnDiv">
@@ -135,13 +145,23 @@ function booksDisplay()
 function deleteBook()
 {
     const displayLibrary = document.getElementsByClassName("removeBook");
+    const libraryDummy = document.querySelector("dummy");
+
     for(var i = 0 ; i < displayLibrary.length ; i++)
     {
+        
         displayLibrary[i].addEventListener('click', function(i)
         {
-           myLibrary.splice(i,1);
+           if(libraryDummy)
+           {
+                libraryDummy.remove();
+           }
+           else
+           {
+                myLibrary.splice(i,1);
+           }
            booksDisplay();
-        }.bind(this,i));
+        });
     }
     
 }
