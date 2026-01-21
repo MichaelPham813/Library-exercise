@@ -1,5 +1,13 @@
+@font-face
+{
+    font-family: libraryFont;
+    src: url(./custom/font/TypographerRotunda.ttf);
+}
 
-
+::placeholder
+{
+    font-family:libraryFont;
+}
 
 body
 {
@@ -8,6 +16,7 @@ body
     height:100%;
     width:100%;
     background-color:#CBD0B9;
+    font-family: libraryFont;
 }
 
 h1
@@ -20,6 +29,12 @@ h1
 button, #buttons
 {
     cursor:pointer;
+    font-family: libraryFont;
+    border-radius:2px;
+    border-color:black;
+    border-style:solid;
+    background:transparent;
+
 }
 
 .container
@@ -86,4 +101,21 @@ button, #buttons
     padding:10px;
     margin:10px;
     gap:20px;
+}
+
+#showDialog, #dialogContainer, .removeBook, .statusBtn
+{
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+dialog::backdrop
+{
+    backdrop-filter: blur(5px);
+}
+
+#buttons, #closeDialog
+{
+    border-radius: 25%;
+    font-weight: bold;    
 }
